@@ -23,6 +23,7 @@ Usage:
             loop: true,
             shuffle: true,
             playlist: true,
+            audioHeight: 30,
             playlistposition: 'bottom',
             features: ['playlistfeature', 'prevtrack', 'playpause', 'nexttrack', 'loop', 'shuffle', 'playlist', 'current', 'progress', 'duration', 'volume'],
         });

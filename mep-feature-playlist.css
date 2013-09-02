@@ -61,9 +61,10 @@
   cursor: pointer;
 }
 .mejs-playlist li:hover {
-  color: green;
+  color: #a8a8a8;
 }
 .mejs-playlist li.current {
-  color: yellow;
+  color: white;
+  font-weight: bold;
 }
 /*End: Playlist*/
