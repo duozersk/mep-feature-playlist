@@ -185,14 +185,26 @@
 
       // set the first track as current
       layers.find('li:first').addClass('current played');
+      //all elements of our playlist
+      var listElements = layers.find('li');
       // play track from playlist when clicking it
       layers.find('.mejs-playlist > ul li').click(function(e) {
+        //if the element clicked is currently NOT played
         if (!$(this).hasClass('current')) {
+          //start playing it and remove "pause" class from all elements
+          listElements.removeClass('paused');
           $(this).addClass('played');
           player.playTrack($(this));
         }
         else {
-          player.play();
+          //if the element clicked IS currently played but PAUSED we want to play it and the other way around
+          if($(this).hasClass('paused')) {
+              player.play();
+              $(this).removeClass('paused');
+          } else {
+              player.pause();
+              $(this).addClass('paused');
+          }
         }
       });
 
